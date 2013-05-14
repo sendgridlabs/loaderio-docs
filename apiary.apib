@@ -1,0 +1,198 @@
+HOST: http://api.loader.io/v1
+
+--- loader.io API load testing documentation ---
+
+---
+All requests require an API key. While you can specify the API key in the body of your request, we’d prefer it be passed via the loaderio-Auth header. You can do this as follows:
+
+In the Header: loaderio-Auth: {api_key}
+
+In the Body: api_key={api_key}
+---
+
+--
+Application Resources
+--
+
+List registered applications
+GET /apps
+> loaderio-Auth: {api_key}
+> Content-Type: application/json
+< 200
+< Content-Type: application/json
+[
+  {
+    "app": "loader.io",
+    "status": "verified",
+    "app_id": "d4bf28cf103182fb367231459300c20f"
+  },
+  {
+    "app": "google.com",
+    "status": "unverified",
+    "app_id": "b579bbed7ef480e7318ac4d7b69e5caa"
+  }
+]
+
+Application status
+GET /apps/{app_id}
+> loaderio-Auth: {api_key}
+> Content-Type: application/json
+< 200
+< Content-Type: application/json
+{
+  "app": "107.22.174.150",
+  "status": "verified",
+  "app_id": "d4bf28cf103182fb367231459300c20f"
+}
+
+Register a new application
+
+Format: myapp.com or www.myapp.com (note: myapp.com & www.myapp.com are different applications)
+POST /apps
+> loaderio-Auth: {api_key}
+> Content-Type: application/json
+{
+    "domain": "example.com"
+}
+< 200
+< Content-Type: application/json
+{
+  "message": "success",
+  "app_id": "0085556d062ca108c463c8c83385fffa",
+  "verification_id": "loaderio-0085556d062ca108c463c8c83385fffa"
+}
+
+Verify a registered application
+POST /apps/{app_id}/verify
+> loaderio-Auth: {api_key}
+> Content-Type: application/json
+< 200
+< Content-Type: application/json
+{
+  "app_id": "d4bf28cf103182fb367231459300c20f",
+  "message": "success"
+}
+
+--
+Test Resources
+--
+
+List of load tests
+GET /tests
+> loaderio-Auth: {api_key}
+> Content-Type: application/json
+< 200
+< Content-Type: application/json
+[
+  {
+    "name": "Test title",
+    "duration": 60,
+    "timeout": 0,
+    "notes": null,
+    "from": 0,
+    "to": 2500,
+    "status": "complete",
+    "test_id": "1f25f5d42d6839bc30815dc92d301e86",
+    "request_type": "GET",
+    "url": "http://loader.io"
+  }
+]
+
+Create a new load test
+POST /tests
+> loaderio-Auth: {api_key}
+> Content-type: application/json
+{
+  "load": "0-60-60", 
+  "callback_url": "loader.io",
+  "name": "New test",
+  "timeout": 10000,
+  "email_callback": "email@exemple.com",
+  "test_type": "total",
+  "notes": "Some note place here",
+  "user_login": "login",
+  "user_password": "password",
+  "scheduled_at": "2013-5-15 3:30:00",
+  "urls": [
+    {
+      "url": "loader.io", 
+      "request_type": "GET",
+      "post_body": "post body params here",
+	  "payload_file_url": "http://loader.io/payload_file.yml",
+	  "headers": { "header1": "value1", "header2": "value2" },
+	  "request_params": { "params1": "value1", "params2": "value2" }
+	}
+  ]
+}
+< 200
+< Content-Type: application/json
+{
+    "message":"success",
+    "test_id":"0004a4e5bc6057ec5aa928f8c0fb96ba"
+}
+
+Load test status
+GET /tests/{test_id}
+> loaderio-Auth: {api_key}
+> Content-type: application/json
+< 200
+< Content-type: application/json
+{
+  "name": "Testing main page",
+  "duration": 60,
+  "timeout": 10000,
+  "notes": "",
+  "from": 0,
+  "to": 250,
+  "status": "complete",
+  "test_id": "9302e0f44e603ae4873934f046983545",
+  "request_type": "GET",
+  "url": "http://loader.io"
+}
+
+Load test results
+GET /tests/{test_id}/results
+> loaderio-Auth: {api_key}
+> Content-type: application/json
+< 200
+< Content-type: application/json
+{
+  "name": "",
+  "duration": 60,
+  "timeout": 10000,
+  "notes": "",
+  "from": 0,
+  "to": 250,
+  "status": "complete",
+  "test_id": "9302e0f44e603ae4873934f046983545",
+  "request_type": "GET",
+  "url": "http://loader.io",
+  "results_data": {
+    "started_at": "2013-05-09T23:31:25+03:00",
+    "public_results_url": "http://loader.io/results/9302e0f44e603ae4873934f046983545",
+    "success": 250,
+    "error": 0,
+    "timeout_error": 0,
+    "data_sent": 91750,
+    "data_received": 28000
+  }
+}
+
+Stop load test
+PUT /tests/{test_id}/stop
+> loaderio-Auth: {api_key}
+> Content-type: application/json
+< 200
+< Content-type: application/json
+{
+  "name": "Testing main page",
+  "duration": 60,
+  "timeout": 10000,
+  "notes": "",
+  "from": 0,
+  "to": 250,
+  "status": "complete",
+  "test_id": "9302e0f44e603ae4873934f046983545",
+  "request_type": "GET",
+  "url": "http://loader.io"
+}
