@@ -22,9 +22,9 @@ GET /apps
 < Content-Type: application/json
 [
   {
-    "app": "loader.io",
+    "app": "gonnacrushya.com",
     "status": "verified",
-    "app_id": "d4bf28cf103182fb367231459300c20f"
+    "app_id": "0f2fabf74c5451cf71dce7cf43987477"
   },
   {
     "app": "google.com",
@@ -40,9 +40,9 @@ GET /apps/{app_id}
 < 200
 < Content-Type: application/json
 {
-  "app": "107.22.174.150",
+  "app": "gonnacrushya.com",
   "status": "verified",
-  "app_id": "d4bf28cf103182fb367231459300c20f"
+  "app_id": "0f2fabf74c5451cf71dce7cf43987477"
 }
 
 Register a new application
@@ -52,14 +52,14 @@ POST /apps
 > loaderio-Auth: {api_key}
 > Content-Type: application/json
 {
-    "app": "example.com"
+    "app": "gonnacrushya.com"
 }
 < 200
 < Content-Type: application/json
 {
   "message": "success",
-  "app_id": "0085556d062ca108c463c8c83385fffa",
-  "verification_id": "loaderio-0085556d062ca108c463c8c83385fffa"
+  "app_id": "0f2fabf74c5451cf71dce7cf43987477",
+  "verification_id": "loaderio-0f2fabf74c5451cf71dce7cf43987477"
 }
 
 Verify a registered application
@@ -69,7 +69,7 @@ POST /apps/{app_id}/verify
 < 200
 < Content-Type: application/json
 {
-  "app_id": "d4bf28cf103182fb367231459300c20f",
+  "app_id": "0f2fabf74c5451cf71dce7cf43987477",
   "message": "success"
 }
 
@@ -85,16 +85,16 @@ GET /tests
 < Content-Type: application/json
 [
   {
-    "name": "Test title",
+    "name": "GonnaCrushYa",
     "duration": 60,
     "timeout": 0,
     "notes": null,
     "from": 0,
-    "to": 2500,
+    "to": 250,
     "status": "complete",
-    "test_id": "1f25f5d42d6839bc30815dc92d301e86",
+    "test_id": "0642ee5387b4ee35b581b6bf1332c70b",
     "request_type": "GET",
-    "url": "http://loader.io"
+    "url": "http://gonnacrushya.com"
   }
 ]
 
@@ -103,21 +103,21 @@ POST /tests
 > loaderio-Auth: {api_key}
 > Content-type: application/json
 {
-  "load": "0-60-60", 
-  "callback_url": "loader.io",
-  "name": "New test",
+  "load": "0-250-60", 
+  "callback_url": "gonnacrushya.com/loader-callback",
+  "name": "GonnaCrushYa Home Page",
   "timeout": 10000,
-  "email_callback": "email@exemple.com",
-  "test_type": "total",
-  "notes": "Some note place here",
+  "email_callback": "crusher@loader.io",
+  "test_type": "cycling",
+  "notes": "Going to kicks the crap out of this server",
   "user_login": "login",
   "user_password": "password",
   "scheduled_at": "2013-5-15 3:30:00",
   "urls": [
     {
-      "url": "loader.io", 
+      "url": "gonnacrushya.com", 
       "request_type": "GET",
-      "post_body": "post body params here",
+      "post_body": "post body params go here",
 	  "payload_file_url": "http://loader.io/payload_file.yml",
 	  "headers": { "header1": "value1", "header2": "value2" },
 	  "request_params": { "params1": "value1", "params2": "value2" }
@@ -128,7 +128,7 @@ POST /tests
 < Content-Type: application/json
 {
     "message":"success",
-    "test_id":"0004a4e5bc6057ec5aa928f8c0fb96ba"
+    "test_id":"0642ee5387b4ee35b581b6bf1332c70b"
 }
 
 Load test status
@@ -138,16 +138,16 @@ GET /tests/{test_id}
 < 200
 < Content-type: application/json
 {
-  "name": "Testing main page",
+  "name": "GonnaCrushYa Home Page",
   "duration": 60,
   "timeout": 10000,
   "notes": "",
   "from": 0,
   "to": 250,
   "status": "complete",
-  "test_id": "9302e0f44e603ae4873934f046983545",
+  "test_id": "0642ee5387b4ee35b581b6bf1332c70b",
   "request_type": "GET",
-  "url": "http://loader.io"
+  "url": "http://gonnacrushya.com.com"
 }
 
 Load test results
@@ -157,24 +157,24 @@ GET /tests/{test_id}/results
 < 200
 < Content-type: application/json
 {
-  "name": "",
+  "name": "GonnaCrushYa Home Page",
   "duration": 60,
   "timeout": 10000,
   "notes": "",
   "from": 0,
   "to": 250,
   "status": "complete",
-  "test_id": "9302e0f44e603ae4873934f046983545",
+  "test_id": "0642ee5387b4ee35b581b6bf1332c70b",
   "request_type": "GET",
-  "url": "http://loader.io",
+  "url": "http://gonnacrushya.com",
   "results_data": {
     "started_at": "2013-05-09T23:31:25+03:00",
-    "public_results_url": "http://loader.io/results/9302e0f44e603ae4873934f046983545",
-    "success": 250,
+    "public_results_url": "http://loader.io/results/0642ee5387b4ee35b581b6bf1332c70b",
+    "success": 213154,
     "error": 0,
     "timeout_error": 0,
-    "data_sent": 91750,
-    "data_received": 28000
+    "data_sent": 470857186,
+    "data_received": 23666310
   }
 }
 
@@ -185,14 +185,14 @@ PUT /tests/{test_id}/stop
 < 200
 < Content-type: application/json
 {
-  "name": "Testing main page",
+  "name": "GonnaCrushYa Home Page",
   "duration": 60,
   "timeout": 10000,
   "notes": "",
   "from": 0,
   "to": 250,
   "status": "complete",
-  "test_id": "9302e0f44e603ae4873934f046983545",
+  "test_id": "0642ee5387b4ee35b581b6bf1332c70b",
   "request_type": "GET",
-  "url": "http://loader.io"
+  "url": "http://gonnacrushya.com"
 }
