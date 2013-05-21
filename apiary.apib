@@ -1,4 +1,4 @@
-HOST: http://api.loader.io/v2
+HOST: https://api.loader.io/v2
 
 --- loader.io API load testing documentation ---
 
@@ -104,7 +104,7 @@ POST /tests
 > Content-type: application/json
 {
   "load": "0-250-60", 
-  "callback_url": "gonnacrushya.com/loader-callback",
+  "callback_url": "http://gonnacrushya.com/loader-callback",
   "name": "GonnaCrushYa Home Page",
   "timeout": 10000,
   "email_callback": "crusher@loader.io",
@@ -115,7 +115,7 @@ POST /tests
   "scheduled_at": "2013-5-15 3:30:00",
   "urls": [
     {
-      "url": "gonnacrushya.com", 
+      "url": "http://gonnacrushya.com", 
       "request_type": "GET",
       "post_body": "post body params go here",
 	  "payload_file_url": "http://loader.io/payload_file.yml",
