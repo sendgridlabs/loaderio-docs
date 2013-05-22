@@ -199,3 +199,17 @@ PUT /tests/{test_id}/stop
   "request_type": "GET",
   "url": "http://gonnacrushya.com"
 }
+
+--
+Servers
+--
+
+Load test server's ip addresses
+GET /servers
+> loaderio-Auth: {api_key}
+> Content-type: application/json
+< 200
+< Content-type: application/json
+{
+  "ip_addresses": ["127.0.0.1"]
+}
