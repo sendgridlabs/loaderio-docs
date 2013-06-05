@@ -103,11 +103,13 @@ POST /tests
 > loaderio-Auth: {api_key}
 > Content-type: application/json
 {
-  "load": "0-250-60", 
-  "callback_url": "http://gonnacrushya.com/loader-callback",
+  "initial": 0,
+  "total": 60,
+  "duration": 60,
+  "callback": "http://gonnacrushya.com/loader-callback",
   "name": "GonnaCrushYa Home Page",
   "timeout": 10000,
-  "email_callback": "crusher@loader.io",
+  "callback_email": "crusher@loader.io",
   "test_type": "cycling",
   "notes": "Going to kicks the crap out of this server",
   "user_login": "login",
@@ -118,7 +120,8 @@ POST /tests
       "url": "http://gonnacrushya.com", 
       "request_type": "GET",
       "post_body": "post body params go here",
-	  "payload_file_url": "http://loader.io/payload_file.yml",
+      "payload_file_url": "http://loader.io/payload_file.yml",
+      "authentication": {"login": "login", "password": "secret", "type": "basic"},
 	  "headers": { "header1": "value1", "header2": "value2" },
 	  "request_params": { "params1": "value1", "params2": "value2" }
 	}
