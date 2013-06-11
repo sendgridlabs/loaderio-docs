@@ -129,7 +129,8 @@ POST /tests
 < Content-Type: application/json
 {
     "message":"success",
-    "test_id":"0642ee5387b4ee35b581b6bf1332c70b"
+    "test_id":"0642ee5387b4ee35b581b6bf1332c70b",
+    "summary_id": "35b581b6bf1332c70b0642ee5387b4ee"
 }
 
 Load test status
@@ -182,6 +183,19 @@ GET /tests/{test_id}/results
   }
 }
 
+Run load test
+PUT /tests/{test_id}/run
+> loaderio-Auth: {api_key}
+> Content-type: application/json
+< 200
+< Content-Type: application/json
+{
+    "message":"success",
+    "test_id":"0642ee5387b4ee35b581b6bf1332c70b",
+    "summary_id": "35b581b6bf1332c70b0642ee5387b4ee"
+}
+
+
 Stop load test
 PUT /tests/{test_id}/stop
 > loaderio-Auth: {api_key}
@@ -199,6 +213,52 @@ PUT /tests/{test_id}/stop
   "test_id": "0642ee5387b4ee35b581b6bf1332c70b",
   "request_type": "GET",
   "url": "http://gonnacrushya.com"
+}
+
+--
+Test results
+--
+
+Load test results
+GET /tests/{test_id}/summaries
+> loaderio-Auth: {api_key}
+> Content-type: application/json
+< 200
+< Content-type: application/json
+[
+  {
+    "started_at":"2013-06-10T23:42:01+02:00",
+    "status":"ready",
+    "public_results_url":"http://loader.io/results/a72944b62d576f0f68fb30ca41d20b99/summaries/8fb213af34c1cf7b675dc21e900e533a",
+    "success":77,
+    "error":0,
+    "timeout_error":0,
+    "network_error":0,
+    "data_sent":28259,
+    "data_received":8393,
+    "avg_response_time":1,
+    "avg_error_rate":0.0
+  }
+]
+
+Load test individual result
+GET /tests/{test_id}/summaries/{summary_id}
+> loaderio-Auth: {api_key}
+> Content-type: application/json
+< 200
+< Content-type: application/json
+{
+  "started_at":"2013-06-10T23:42:01+02:00",
+  "status":"ready",
+  "public_results_url":"http://loader.io/results/a72944b62d576f0f68fb30ca41d20b99/summaries/8fb213af34c1cf7b675dc21e900e533a",
+  "success":77,
+  "error":0,
+  "timeout_error":0,
+  "network_error":0,
+  "data_sent":28259,
+  "data_received":8393,
+  "avg_response_time":1,
+  "avg_error_rate":0.0
 }
 
 --
