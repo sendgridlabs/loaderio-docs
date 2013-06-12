@@ -118,8 +118,8 @@ GET /tests
     "duration":60,
     "timeout":10000,
     "notes":"",
-    "from":0,
-    "to":60,
+    "initial":0,
+    "total":60,
     "status":"complete",
     "test_id":"9b24d675afb6c09c6813a79c956f0d02",
     "test_type":"Non-Cycling",
@@ -153,8 +153,8 @@ GET /tests/active
     "duration":60,
     "timeout":10000,
     "notes":"",
-    "from":0,
-    "to":60,
+    "initial":0,
+    "total":60,
     "status":"complete",
     "test_id":"9b24d675afb6c09c6813a79c956f0d02",
     "test_type":"Non-Cycling",
@@ -238,8 +238,8 @@ GET /tests/{test_id}
   "duration":60,
   "timeout":10000,
   "notes":"",
-  "from":0,
-  "to":60,
+  "initial":0,
+  "total":60,
   "status":"complete",
   "test_id":"9b24d675afb6c09c6813a79c956f0d02",
   "test_type":"Non-Cycling",
@@ -383,6 +383,28 @@ GET /tests/{test_id}/summaries/{summary_id}
 {
   "message":"error",
   "errors":["Requested record was not found"]
+}
+
+GET /tests/{test_id}/summaries/{summary_id}?errors_threshold=0&response_time_threshold=10
+> loaderio-Auth: {api_key}
+> Content-type: application/json
+< 200
+< Content-type: application/json
+{
+  "summary_id": "8fb213af34c1cf7b675dc21e900e533a",
+  "started_at":"2013-06-10T23:42:01+02:00",
+  "status":"ready",
+  "public_results_url":"http://loader.io/results/a72944b62d576f0f68fb30ca41d20b99/summaries/8fb213af34c1cf7b675dc21e900e533a",
+  "success":77,
+  "error":0,
+  "timeout_error":0,
+  "network_error":0,
+  "data_sent":28259,
+  "data_received":8393,
+  "avg_response_time":1,
+  "avg_error_rate":0.0,
+  "errors_threshold_status":"failed",
+  "response_time_threshold_status":"passed"
 }
 
 --
