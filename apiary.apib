@@ -44,6 +44,13 @@ GET /apps/{app_id}
   "status": "verified",
   "app_id": "0f2fabf74c5451cf71dce7cf43987477"
 }
++++++
+< 404
+< Content-Type: application/json
+{
+  "message":"error",
+  "errors":["Requested record was not found"]
+}
 
 Register a new application
 
@@ -61,6 +68,13 @@ POST /apps
   "app_id": "0f2fabf74c5451cf71dce7cf43987477",
   "verification_id": "loaderio-0f2fabf74c5451cf71dce7cf43987477"
 }
++++++
+< 422
+< Content-Type: application/json
+{
+  "message":"error",
+  "errors":["We are unable to register this app"]
+}
 
 Verify a registered application
 POST /apps/{app_id}/verify
@@ -71,6 +85,21 @@ POST /apps/{app_id}/verify
 {
   "app_id": "0f2fabf74c5451cf71dce7cf43987477",
   "message": "success"
+}
++++++
+< 422
+< Content-Type: application/json
+{
+  "app_id": "0f2fabf74c5451cf71dce7cf43987477",
+  "message":"error",
+  "errors":["can't verify domain gonnacrushya.com"]
+}
++++++
+< 404
+< Content-Type: application/json
+{
+  "message":"error",
+  "errors":["Requested record was not found"]
 }
 
 --
@@ -104,9 +133,44 @@ GET /tests
         "raw_post_body":null,
         "request_type":"GET",
         "payload_file_url":null,
-        "headers":{ header: "value", header2: "value2" },
-        "request_params":{ param: "value", param2: "value2" },
-        "authentication":{login: "login", password: "password", type: "basic"}
+        "headers":{ "header": "value", "header2": "value2" },
+        "request_params":{ "param": "value", "param2": "value2" },
+        "authentication":{"login": "login", "password": "password", "type": "basic"}
+      }
+    ]
+  }
+]
+
+List of active load tests (verified, not archived)
+GET /tests/active
+> loaderio-Auth: {api_key}
+> Content-Type: application/json
+< 200
+< Content-Type: application/json
+[
+  {
+    "name":"",
+    "duration":60,
+    "timeout":10000,
+    "notes":"",
+    "from":0,
+    "to":60,
+    "status":"complete",
+    "test_id":"9b24d675afb6c09c6813a79c956f0d02",
+    "test_type":"Non-Cycling",
+    "callback":"http://loader.io",
+    "callback_email":"test@mail.com",
+    "scheduled_at": "2013-06-07T19:30:00+03:00",
+    "urls":
+    [
+      {
+        "url":"http://loader.io/signin",
+        "raw_post_body":null,
+        "request_type":"GET",
+        "payload_file_url":null,
+        "headers":{ "header": "value", "header2": "value2" },
+        "request_params":{ "param": "value", "param2": "value2" },
+        "authentication":{"login": "login", "password": "password", "type": "basic"}
       }
     ]
   }
@@ -134,8 +198,8 @@ POST /tests
       "post_body": "post body params go here",
       "payload_file_url": "http://loader.io/payload_file.yml",
       "authentication": {"login": "login", "password": "secret", "type": "basic"},
-	  "headers": { "header1": "value1", "header2": "value2" },
-	  "request_params": { "params1": "value1", "params2": "value2" }
+	    "headers": { "header1": "value1", "header2": "value2" },
+	    "request_params": { "params1": "value1", "params2": "value2" }
 	}
   ]
 }
@@ -144,7 +208,23 @@ POST /tests
 {
     "message":"success",
     "test_id":"0642ee5387b4ee35b581b6bf1332c70b",
+    "status":"processing"
     "summary_id": "35b581b6bf1332c70b0642ee5387b4ee"
+}
++++++
+< 200
+< Content-Type: application/json
+{
+    "message":"success",
+    "test_id":"0642ee5387b4ee35b581b6bf1332c70b",
+    "status":"unverified"
+}
++++++
+< 422
+< Content-Type: application/json
+{
+    "message":"error",
+    "errors":["can't create test"]
 }
 
 Load test status
@@ -173,57 +253,18 @@ GET /tests/{test_id}
       "raw_post_body":null,
       "request_type":"GET",
       "payload_file_url":null,
-      "headers":{ header: "value", header2: "value2" },
-      "request_params":{ param: "value", param2: "value2" },
-      "authentication":{login: "login", password: "password", type: "basic"}
+      "headers":{ "header": "value", "header2": "value2" },
+      "request_params":{"param": "value", "param2": "value2" },
+      "authentication":{"login": "login", "password": "password", "type": "basic"}
     }
   ]
 }
-Load test results
-GET /tests/{test_id}/results
-> loaderio-Auth: {api_key}
-> Content-type: application/json
-< 200
-< Content-type: application/json
++++++
+< 404
+< Content-Type: application/json
 {
-  {
-    "name":"",
-    "duration":60,
-    "timeout":10000,
-    "notes":"",
-    "from":0,
-    "to":60,
-    "status":"complete",
-    "test_id":"9b24d675afb6c09c6813a79c956f0d02",
-    "test_type":"Non-Cycling",
-    "callback":"http://loader.io",
-    "callback_email":"test@mail.com",
-    "scheduled_at": "2013-06-07T19:30:00+03:00",
-    "urls":
-    [
-      {
-        "url":"http://loader.io/signin",
-        "raw_post_body":null,
-        "request_type":"GET",
-        "payload_file_url":null,
-        "headers":{ header: "value", header2: "value2" },
-        "request_params":{ param: "value", param2: "value2" },
-        "authentication":{login: "login", password: "password", type: "basic"}
-      }
-    ],
-    "results_data": {
-      "started_at": "2013-05-09T23:31:25+03:00",
-      "public_results_url": "http://loader.io/results/0642ee5387b4ee35b581b6bf1332c70b",
-      "avg_response_time": 7,
-      "avg_error_rate": 0.0,
-      "success": 213154,
-      "error": 0,
-      "timeout_error": 0,
-      "network_error": 0, 
-      "data_sent": 470857186,
-      "data_received": 23666310
-    }    
-  }
+  "message":"error",
+  "errors":["Requested record was not found"]
 }
 
 Run load test
@@ -235,7 +276,22 @@ PUT /tests/{test_id}/run
 {
     "message":"success",
     "test_id":"0642ee5387b4ee35b581b6bf1332c70b",
+    "status":"processing"
     "summary_id": "35b581b6bf1332c70b0642ee5387b4ee"
+}
++++++
+< 404
+< Content-Type: application/json
+{
+  "message":"error",
+  "errors":["Requested record was not found"]
+}
++++++
+< 422
+< Content-Type: application/json
+{
+    "message":"error",
+    "errors":["Can't run test for unverified application"]
 }
 
 
@@ -251,6 +307,21 @@ PUT /tests/{test_id}/stop
   "status":"finished",
   "summary_id":"7c55ad8408f7c4326b7fa0e069b7a011"
 }
++++++
+< 404
+< Content-Type: application/json
+{
+  "message":"error",
+  "errors":["Requested record was not found"]
+}
++++++
+< 422
+< Content-Type: application/json
+{
+    "message":"error",
+    "errors":["Can't stop test with finished status"]
+}
+
 
 --
 Test results
@@ -278,8 +349,15 @@ GET /tests/{test_id}/summaries
     "avg_error_rate":0.0
   }
 ]
++++++
+< 404
+< Content-Type: application/json
+{
+  "message":"error",
+  "errors":["Requested record was not found"]
+}
 
-Load test individual result
+Load test result
 GET /tests/{test_id}/summaries/{summary_id}
 > loaderio-Auth: {api_key}
 > Content-type: application/json
@@ -298,6 +376,13 @@ GET /tests/{test_id}/summaries/{summary_id}
   "data_received":8393,
   "avg_response_time":1,
   "avg_error_rate":0.0
+}
++++++
+< 404
+< Content-Type: application/json
+{
+  "message":"error",
+  "errors":["Requested record was not found"]
 }
 
 --
