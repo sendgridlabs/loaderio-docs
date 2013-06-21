@@ -102,6 +102,21 @@ POST /apps/{app_id}/verify
   "errors":["Requested record was not found"]
 }
 
+Delete application. 
+All past test data will also be deleted and will not be able to be recovered.
+DELETE /apps/{app_id}
+> loaderio-Auth: {api_key}
+> Content-Type: application/json
+< 200
+< Content-Type: application/json
++++++
+< 404
+< Content-Type: application/json
+{
+  "message":"error",
+  "errors":["Requested record was not found"]
+}
+
 --
 Test Resources
 --
