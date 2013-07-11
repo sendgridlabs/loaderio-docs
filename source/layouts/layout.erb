@@ -14,10 +14,10 @@
     <body>
       <div class="row" id="content">
         <div class="col navigation">
+          <a style="border: none" href="http://loader.io" title="Go to loader.io"><%= image_tag "loaderio-logo.png", :alt => 'Loader.io Logo' %></a>
           <%= partial 'layouts/nav' %>
         </div>
         <div class="col docs">
-          <a href="http://loader.io" title="Go to loader.io"><%= image_tag "loaderio-logo.png", :alt => 'Loader.io Logo' %></a>
           <header>
             <h1><%= current_page.data.title || "" %></h1>
           </header>

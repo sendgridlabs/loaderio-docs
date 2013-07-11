@@ -67,7 +67,13 @@ At the most basic level, all you need to do with the URL field is enter the URL 
 
 ## Cloning tests <a href="#cloning" id="cloning" class="mark">#</a>
 
+After a test runs and you look at the [results][results], you may want to tweak one setting, bump the connections up (or down) for example, and run it again. Rather than fill out the entire form again, just clone the test, adjust the settings as needed, and re-run. Cloning a test is nothing more than taking an old test and pre-filling the new test form with the old test's settings for you.
+
+There are two ways to clone a test: the big "clone" button on the results page, and a (semi-secretive) clone mini-button on the main test listing page (hover the mouse over the test to reveal the buttons):
+
+![Secret Clone Button](../img/loaderio-secret-clone-button.png)
 
 [wp-basic-auth]: https://en.wikipedia.org/wiki/Basic_access_authentication "HTTP Basic Access Authentication"
 [wp-headers]: https://en.wikipedia.org/wiki/HTTP_headers "HTTP Headers"
 [payload-file]: payload-files.html "Payload File"
+[results]: results.html "Test Results"
