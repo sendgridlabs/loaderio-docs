@@ -5,14 +5,14 @@ title: Creating a Test
 There are two ways to create a new test:
 
 - [from scratch](#from-scratch)
-- by [cloning an existing test](#cloning)
+- [cloning an existing test](#cloning)
 
 ## A new test from scratch <a href="#from-scratch" id="from-scratch" class="mark">#</a>
 
 
 When you click on the "new test" button, you are presented with a form with several inputs for your new test:
 
-![New test form](/img/loaderio-new-test.png)
+![New test form](../img/loaderio-new-test.png)
 
 What do all of these fields mean? Glad you asked...
 
@@ -58,7 +58,7 @@ The **notes** and **tag** fields are for you: write a description of the test, s
 
 At the most basic level, all you need to do with the URL field is enter the URL you want to test. The default is to do a simple HTTP GET request to that URL. Click on "Configure URL Options" to get fancy:
 
-![URL Options](/img/loaderio-url-options.png)
+![URL Options](../img/loaderio-url-options.png)
 
 - **HTTP Headers**: if your app needs special [HTTP headers][wp-headers] to be sent, you can specify them here. The header name (e.g. `Content-Type`) goes in the left box, and the value (e.g. `application/json`) in the right box. Click the "+" button to add more.
 - **GET Options**: You can add key/value pairs in these input boxes, and they will be URL-encoded and added to the query string of your URL.
