@@ -6,6 +6,28 @@ body {
   border-top: 5px #e81626 solid;
 }
 
+body pre {
+  border-left: 2px #e81626 solid;
+  border-radius: 3px;
+  background-color: #f8f8f8;
+  font-size: 13px;
+  line-height: 19px;
+  padding: 6px 10px;
+  overflow: auto;
+}
+
+pre code {
+  border: none;
+  color: black;
+  background-color: inherit;
+}
+code {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  background-color: #f8f8f8;
+  color: #7B0C14;
+}
+
 .navigation h1 {
   font-size: 1.5em;
 }
@@ -24,6 +46,15 @@ body {
   border-left: 2px #e81626 solid;
 }
 
+.docs img {
+  padding: 5px;
+  border: 1px solid #CCAEB0;
+}
+
+#spacer {
+  height: 500px;
+}
+
 a.mark, a.mark:visited {
   text-decoration: none;
   color: #CCAEB0;
@@ -31,6 +62,54 @@ a.mark, a.mark:visited {
 a.mark:hover {
   color: #e81626;
 }
+
+/* borrowed from bootstrap.css */
+table {
+  max-width: 100%;
+  background-color: transparent;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.table th,
+.table td {
+  padding: 8px;
+  line-height: 20px;
+  text-align: left;
+  vertical-align: top;
+  border-top: 1px solid #dddddd;
+}
+
+.table th {
+  font-weight: bold;
+}
+
+.table thead th {
+  vertical-align: bottom;
+}
+
+.table caption + thead tr:first-child th,
+.table caption + thead tr:first-child td,
+.table colgroup + thead tr:first-child th,
+.table colgroup + thead tr:first-child td,
+.table thead:first-child tr:first-child th,
+.table thead:first-child tr:first-child td {
+  border-top: 0;
+}
+
+.table tbody + tbody {
+  border-top: 2px solid #dddddd;
+}
+
+.table .table {
+  background-color: #ffffff;
+}
+/* /bootstrap.css */
 
 /*
  * A better looking default horizontal rule

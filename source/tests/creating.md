@@ -1,11 +1,11 @@
----
-title: Creating a Test
----
+# Creating a Test
 
 There are two ways to create a new test:
 
 - [from scratch](#from-scratch)
 - [cloning an existing test](#cloning)
+
+---------------------
 
 ## A new test from scratch <a href="#from-scratch" id="from-scratch" class="mark">#</a>
 
@@ -65,6 +65,8 @@ At the most basic level, all you need to do with the URL field is enter the URL 
 - **POST Options**: You can add either key/value pairs in the key/value boxes, just like with GET Options. These will be encoded and sent in the request body, the same as if a user filled out a form and submitted it. You can also provide the raw body text by selecting "BODY" and typing in the text area.
 - **Payload File**: if you have a large JSON blob that you want to use as the POST body, put it at a public URL and enter that URL in the box labeled "Enter the URL". When you run the test, loader.io will download the file and use it as the request body (see [Payload File][payload-file]).
 
+---------------------
+
 ## Cloning tests <a href="#cloning" id="cloning" class="mark">#</a>
 
 After a test runs and you look at the [results][results], you may want to tweak one setting, bump the connections up (or down) for example, and run it again. Rather than fill out the entire form again, just clone the test, adjust the settings as needed, and re-run. Cloning a test is nothing more than taking an old test and pre-filling the new test form with the old test's settings for you.
@@ -77,3 +79,5 @@ There are two ways to clone a test: the big "clone" button on the results page, 
 [wp-headers]: https://en.wikipedia.org/wiki/HTTP_headers "HTTP Headers"
 [payload-file]: payload-files.html "Payload File"
 [results]: results.html "Test Results"
+
+<div id="spacer"></div>
