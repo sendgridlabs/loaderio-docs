@@ -37,13 +37,25 @@ code {
   padding: 0px;
 }
 .navigation a {
+  color: #e81626;
   text-decoration: none;
   padding: 5px 0px 5px 15px;
   display: block;
   border-left: 2px #CCAEB0 solid;
 }
 .navigation a:hover {
+  color: #1696E8;
   border-left: 2px #e81626 solid;
+}
+
+ul .subnav {
+  padding-left: 15px;
+}
+ul .subnav a, ul .subnav a:hover {
+  border: none;
+  font-family: Courier, monospace;
+  font-size: 75%;
+  padding: 0px 0px 0px 15px;
 }
 
 .docs img {
