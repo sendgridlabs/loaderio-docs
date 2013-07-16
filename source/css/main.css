@@ -75,6 +75,16 @@ a.mark:hover {
   color: #e81626;
 }
 
+h1 > code {
+  display:block;
+  color: #000;
+  border: 1px solid #000;
+  border-left: none;
+  border-right: none;
+  border-radius: 0px;
+  padding: 7px;
+}
+
 /* borrowed from bootstrap.css */
 table {
   max-width: 100%;
