@@ -22,7 +22,7 @@ Once you have registered and verified an app, you can create and run tests on it
       <td>POST</td>
       <td><code>/v2/tests</code></td>
       <td>Create new test</td>
-      <td><a href="#post-tests-params">see below</a></td>
+      <td><a href="/api/v2/post/tests.html#test-options">see POST /v2/tests</a></td>
     </tr>
     <tr>
       <td>GET</td>
