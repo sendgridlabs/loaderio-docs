@@ -18,4 +18,5 @@
   <li><%= link_to "Results", '/api/results.html', :relative => true %></li>
     <%= partial 'layouts/api/results' if api_link?('results') %>
   <li><%= link_to "Servers", '/api/servers.html', :relative => true %></li>
+    <%= partial 'layouts/api/servers' if api_link?('servers') %>
 </ul>

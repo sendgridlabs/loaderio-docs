@@ -1,7 +1,7 @@
 body {
   padding-top: 15px;
   font-size: 1em;
-  font-family: Georgia, serif;
+  font-family: Raleway, Helvetica, sans-serif;
   line-height: 1.4;
   border-top: 5px #e81626 solid;
 }
@@ -36,15 +36,21 @@ code {
   margin: 0px;
   padding: 0px;
 }
-.navigation a {
+.navigation a, .docs a,
+.navigation a:visited, .docs a:visited {
   color: #e81626;
   text-decoration: none;
+}
+.navigation a {
   padding: 5px 0px 5px 15px;
   display: block;
   border-left: 2px #CCAEB0 solid;
 }
-.navigation a:hover {
+.navigation a:hover,
+.docs a:hover {
   color: #1696E8;
+}
+.navigation a:hover {
   border-left: 2px #e81626 solid;
 }
 
@@ -53,7 +59,7 @@ ul .subnav {
 }
 ul .subnav a, ul .subnav a:hover {
   border: none;
-  font-family: Courier, monospace;
+  /*font-family: Courier, monospace;*/
   font-size: 75%;
   padding: 0px 0px 0px 15px;
 }
@@ -70,12 +76,14 @@ ul .subnav a, ul .subnav a:hover {
 a.mark, a.mark:visited {
   text-decoration: none;
   color: #CCAEB0;
+  font-weight: normal;
 }
 a.mark:hover {
   color: #e81626;
 }
 
 h1 > code {
+  font-family: inherit;
   display:block;
   color: #000;
   border: 1px solid #000;
@@ -83,6 +91,14 @@ h1 > code {
   border-right: none;
   border-radius: 0px;
   padding: 7px;
+}
+
+td code {
+  border: none;
+  background-color: inherit;
+}
+.required {
+  background-color: #FFEEDB;
 }
 
 /* borrowed from bootstrap.css */

@@ -1,0 +1,36 @@
+# `GET /v2/tests`
+
+Get a list of all your tests.
+
+    $ curl -H 'loaderio-auth: API_KEY' https://api.loader.io/v2/tests | python -mjson.tool
+
+Example response:
+
+    [
+      {
+        "callback": null,
+        "callback_email": null,
+        "domain": "gonnacrushya.com",
+        "duration": 60,
+        "initial": 0,
+        "name": "",
+        "notes": "",
+        "scheduled_at": null,
+        "status": "complete",
+        "test_id": "237a25ef081192d6a5c8602f99bdce1c",
+        "test_type": "Non-Cycling",
+        "timeout": 10000,
+        "total": 250,
+        "urls": [
+          {
+            "authentication": null,
+            "headers": {},
+            "payload_file_url": null,
+            "raw_post_body": null,
+            "request_params": {},
+            "request_type": "GET",
+            "url": "http://gonnacrushya.com"
+          }
+        ]
+      }
+    ]
