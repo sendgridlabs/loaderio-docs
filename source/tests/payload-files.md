@@ -8,7 +8,7 @@ Payload files are another way to get loader to send varying data to your app. Th
         ["steve", "h4x0R"],
         ["joe1", "silly"],
         ["jack", "<3jill"],
-        ["jill", "<3jack"],
+        ["jill", "<3jack"]
       ]
     }
 
