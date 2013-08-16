@@ -63,7 +63,7 @@ At the most basic level, all you need to do with the URL field is enter the URL 
 - **HTTP Headers**: if your app needs special [HTTP headers][wp-headers] to be sent, you can specify them here. The header name (e.g. `Content-Type`) goes in the left box, and the value (e.g. `application/json`) in the right box. Click the "+" button to add more.
 - **GET Options**: You can add key/value pairs in these input boxes, and they will be URL-encoded and added to the query string of your URL.
 - **POST Options**: You can add either key/value pairs in the key/value boxes, just like with GET Options. These will be encoded and sent in the request body, the same as if a user filled out a form and submitted it. You can also provide the raw body text by selecting "BODY" and typing in the text area.
-- **Payload File**: if you have a large JSON blob that you want to use as the POST body, put it at a public URL and enter that URL in the box labeled "Enter the URL". When you run the test, loader.io will download the file and use it as the request body (see [Payload File][payload-file]).
+- **Payload File**: You can use a specially-formatted JSON file to pass varying data on each request. Craft your [payload file][payload-file], put it at a public URL, and enter that URL in the box labeled "Enter the URL". When you run the test, loader.io will download the file, parse it, and use the data in the request body. See [payload files][payload-file] for more details on the format.
 
 ---------------------
 
