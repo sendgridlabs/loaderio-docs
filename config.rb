@@ -18,3 +18,8 @@ helpers do
     return /api\/[\w\d:\/]*#{section}/ =~ current_resource.path
   end
 end
+
+activate :deploy do |deploy|
+  deploy.method = :git
+  deploy.branch = "gh-pages"
+end
