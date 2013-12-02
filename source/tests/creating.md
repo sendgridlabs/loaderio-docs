@@ -22,9 +22,8 @@ This one is for you: give your test a name so you can find it later. Or leave it
 
 ### Test Type <a href="#test-type" id="test-type" class="mark">#</a>
 
-In a cycling test, loader.io's load generator will "cycle" requests, re-using a connection for the duration of the test and making as many requests as it possibly can in that time. Non-Cycling tests do not re-use connections for multiple tests, and make only the number of connections specified in the test.
-
-Cycling vs. Non-Cycling tests are discussed in more detail in [test types](test-types.html).
+Loader.io supports three types of tests: **Clients per test**, **Clients per second**, and **Maintain client load**.
+The test types are discussed in more detail in [test types](test-types.html).
 
 ### Authentication <a href="#authentication" id="authentication" class="mark">#</a>
 
@@ -38,9 +37,11 @@ These are the main settings for your test: how many connections should we make, 
 
 Specifying the number of connections depends on the test type.
 
-- **non-cycling test**: there is just one field: "Connections". Whatever number you enter here is the number of connections that will be made to your server.
+- **Clients per test**: there is just one field: "Connections". Whatever number you enter here is the number of connections that will be made to your server over the duration of the test
 
-- **cycling test**: there is a "from" and a "to" field. Cycling tests start with some number of connections ("from") and can increase the connections throughout the test, reaching the number in the "to" field by the end of the test.
+- **Clients per second**: there is just one field: "Connections". Whatever number you enter here is the number of connections that will be made to your server per second
+
+- **Maintain client load**: there is a "from" and a "to" field. The test starts with some number of connections ("from") and can increase the connections throughout the test, reaching the number in the "to" field by the end of the test.
 
 The **duration** field means the same in both cases: the amount of time to run the test, in seconds.
 
