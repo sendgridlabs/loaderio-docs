@@ -8,6 +8,15 @@
   <li><%= nav_link "Results", '/tests/results.html', :relative => true %></li>
 </ul>
 
+<h1>Automation</h1>
+<ul>
+  <li><%= nav_link "Webhook", '/automate/webhook.html', :relative => true %></li>
+  <ul class="subnav">
+    <li><%= nav_link "TravisCI", '/automate/travis-ci.html', :relative => true %></li>
+    <li><%= nav_link "CircleCI", '/automate/circle-ci.html', :relative => true %></li>
+  </ul>
+</ul>
+
 <h1>Loader.io API</h1>
 <ul>
   <li><%= nav_link "Introduction", '/api/intro.html', :relative => true %></li>
