@@ -17,6 +17,13 @@ helpers do
   def api_link?(section)
     return /api\/[\w\d:\/]*#{section}/ =~ current_resource.path
   end
+
+  def nav_link(text, url, opts={}, classname="current")
+    if '/' + request.path == url
+      opts[:class] = classname
+    end
+    link_to(text, url, opts)
+  end
 end
 
 activate :deploy do |deploy|

@@ -1,22 +1,22 @@
 <h1>Loader.io Basics</h1>
 <ul>
-  <li><%= link_to "Creating a Test", '/tests/creating.html', :relative => true %></li>
-  <li><%= link_to "Verifying an App", '/tests/verifying.html', :relative => true %></li>
-  <li><%= link_to "Test Types", '/tests/test-types.html', :relative => true %></li>
-  <li><%= link_to "Expression Syntax", '/tests/expression-syntax.html', :relative => true %></li>
-  <li><%= link_to "Payload Files", '/tests/payload-files.html', :relative => true %></li>
-  <li><%= link_to "Results", '/tests/results.html', :relative => true %></li>
+  <li><%= nav_link "Creating a Test", '/tests/creating.html', :relative => true %></li>
+  <li><%= nav_link "Verifying an App", '/tests/verifying.html', :relative => true %></li>
+  <li><%= nav_link "Test Types", '/tests/test-types.html', :relative => true %></li>
+  <li><%= nav_link "Expression Syntax", '/tests/expression-syntax.html', :relative => true %></li>
+  <li><%= nav_link "Payload Files", '/tests/payload-files.html', :relative => true %></li>
+  <li><%= nav_link "Results", '/tests/results.html', :relative => true %></li>
 </ul>
 
 <h1>Loader.io API</h1>
 <ul>
-  <li><%= link_to "Introduction", '/api/intro.html', :relative => true %></li>
-  <li><%= link_to "Application", '/api/apps.html', :relative => true %></li>
+  <li><%= nav_link "Introduction", '/api/intro.html', :relative => true %></li>
+  <li><%= nav_link "Application", '/api/apps.html', :relative => true %></li>
     <%= partial 'layouts/api/apps' if api_link?('apps') %>
-  <li><%= link_to "Tests", '/api/tests.html', :relative => true %></li>
+  <li><%= nav_link "Tests", '/api/tests.html', :relative => true %></li>
     <%= partial 'layouts/api/tests' if api_link?('tests') && !api_link?('results') %>
-  <li><%= link_to "Results", '/api/results.html', :relative => true %></li>
+  <li><%= nav_link "Results", '/api/results.html', :relative => true %></li>
     <%= partial 'layouts/api/results' if api_link?('results') %>
-  <li><%= link_to "Servers", '/api/servers.html', :relative => true %></li>
+  <li><%= nav_link "Servers", '/api/servers.html', :relative => true %></li>
     <%= partial 'layouts/api/servers' if api_link?('servers') %>
 </ul>
