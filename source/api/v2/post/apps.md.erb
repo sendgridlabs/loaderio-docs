@@ -2,8 +2,9 @@
 
 Register a new app:
 
-    $ curl -H 'loaderio-auth: API_KEY' https://api.loader.io/v2/apps \
-           -d app=www.gonnacrushya.com | python -mjson.tool
+<%= embedcurl "curl -X POST https://api.loader.io/v2/apps \\
+     -H 'loaderio-auth: API_KEY' \\
+     -d app=www.gonnacrushya.com" %>
 
 Example response:
 

@@ -2,9 +2,8 @@
 
 Get a specific result from this test.
 
-    $ curl -H 'loaderio-auth: API_KEY' \
-           https://api.loader.io/v2/tests/f133e9e3691e405eefd3e1b7c351cb18/results/08627345e5aa0f89f95851a69a4cb0dc \
-           | python -mjson.tool
+<%= embedcurl "curl https://api.loader.io/v2/tests/f133e9e3691e405eefd3e1b7c351cb18/results/08627345e5aa0f89f95851a69a4cb0dc \\
+     -H 'loaderio-auth: API_KEY' " %>
 
 Example result:
 

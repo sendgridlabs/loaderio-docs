@@ -10,21 +10,31 @@ To authenticate with the loader.io API, add the special `loaderio-auth` header t
 
 ## About This Documentation
 
-In this documentation, examples are displayed in the form of [curl](http://curl.haxx.se/) commands, meant to be typed at a command prompt. For code examples in a few other languages, see our [apipary site](http://docs.loaderio.apiary.io).
+In this documentation, examples are displayed in the form of [curl](http://curl.haxx.se/) commands, meant to be typed at a command prompt.
 
 A typical example API call might look something like this:
 
-    $ curl -H 'loaderio-auth: API_KEY' https://api.loader.io/v2/tests | python -mjson.tool
+<%= embedcurl "curl -H 'loaderio-auth: API_KEY' https://api.loader.io/v2/tests" %>
 
 Let's break that down and explain each part:
 
-- `$`: this represents your command prompt. Don't type this part :)
 - `curl`: [curl][curl] is a command-line tool for accessing URLs over HTTP (and other protocols)
 - `-H 'loaderio-auth: API_KEY'`: the `-H` option tells curl to add a header to the request. In this case, we add the `loaderio-auth` header and give it the value of our API key (replace "API_KEY" with the key obtained from your [account settings][settings] page on loader.io)
 - `https://api.loader.io/v2/tests`: this is the URL to the API resource we are accessing. In this case it's a list of all our tests (*note*: to keep your API key secure, always access the API over `https`, not `http`)
-- `| python -mjson.tool`: this is just a handy way of getting raw JSON data and formatting it nicely. If you don't have python installed, you can leave this off of the commands
 
-When you see a url with a section prefixed with a colon (":"), that section is a placeholder for a test ID or app ID. For example, in the URL `https://api.loader.io/v2/tests/:test_id`, `:test_id` is a placeholder for a test id, e.g. `f133e9e3691e405eefd3e1b7c351cb18`. If you used `:test_id` there, you will get an error from the API.
+Our API returns JSON that isn't formatted for viewing by humans, so you may also want to pretty-print the response. Many tools can do this for you, but an easy way that you might already have is python's `json.tool` module. Just pipe the curl response to `python -mjson.tool`:
+
+    curl ... | python -mjson.tool
+
+This will format the response nicely if you're testing API calls from the command line. For even less typing, configure an alias in your shell, e.g. "alias json="python -mjson.tool".
+
+### ID Placeholders
+
+When you see a url with a section prefixed with a colon (":"), that section is a placeholder for a test ID or app ID. For example, in the URL 
+    
+    https://api.loader.io/v2/tests/:test_id`
+
+`:test_id` is a placeholder for a test id, e.g. `f133e9e3691e405eefd3e1b7c351cb18`. If you used `:test_id` there, you will get an error from the API.
 
 [curl]: http://curl.haxx.se "cURL"
 [settings]: https://loader.io/settings "Loader.io account settings"

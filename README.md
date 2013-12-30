@@ -1,19 +1,13 @@
 # Loader.io API documentation
 
-sun middleman server: 
+run middleman server: 
 
-```
-  middleman server
-```
+    middleman server
 
 build static pages:
 
-```
-middleman build
-```
+    middleman build
 
 deploy static pages: 
 
-```
-middleman deploy
-```
+    middleman deploy

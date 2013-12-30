@@ -2,8 +2,8 @@
 
 Get information about a specific test.
 
-    $ curl -H 'loaderio-auth: API_KEY' \
-         https://api.loader.io/v2/tests/f133e9e3691e405eefd3e1b7c351cb18 | python -mjson.tool
+<%= embedcurl "curl https://api.loader.io/v2/tests/f133e9e3691e405eefd3e1b7c351cb18 \\
+     -H 'loaderio-auth: API_KEY' " %>
 
 Example response:
 

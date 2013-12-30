@@ -6,14 +6,15 @@ Create a new test. Refer to the [test creation](/tests/creating.html#from-scratc
 
 Before creating a test in the API, we have to [create][app-create] and [verify][app-verify] an app using the API. Use the domain from the URL(s) you want to test as the app name and verify it before trying this example.
 
-    $ curl -H 'loaderio-auth: API_KEY' https://api.loader.io/v2/tests \
-           --data-binary '{"test_type":"cycling",
-                    "total": 6000,
-                    "duration":60,
-                    "urls": [
-                      {"url": "http://gonnacrushya.com"}
-                    ]}' \
-           -H 'Content-Type: application/json' | python -mjson.tool
+<%= embedcurl "curl -X POST https://api.loader.io/v2/tests \\
+     -H 'loaderio-auth: API_KEY' \\
+     --data-binary '{\"test_type\":\"cycling\",
+              \"total\": 6000, 
+              \"duration\":60,
+              \"urls\": [
+                {\"url\": \"http://gonnacrushya.com\"}
+              ]}' \\
+     -H 'Content-Type: application/json'" %>
 
 Example result  (**successful test creation**):
 
@@ -48,9 +49,9 @@ An asterisk (*) indicates required fields.
     </tr>
     <tr class="required">
       <td><code>*urls</code></td>
-      <td>JSON Array</td>
+      <td>Array</td>
       <td>none</td>
-      <td><code></code></td>
+      <td>(see <a href="#url-options">url options</a>)</td>
       <td>URLs to test</td>
     </tr>
     <tr class="required">
@@ -127,6 +128,8 @@ An asterisk (*) indicates required fields.
 </table>
 
 ## URL Options <a href="#url-options" id="url-options" class="mark">#</a>
+
+Each member of the `urls` array is an object with the following attributes:
 
 <table class="table">
   <thead>

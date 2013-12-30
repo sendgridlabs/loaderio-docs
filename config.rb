@@ -24,6 +24,10 @@ helpers do
     end
     link_to(text, url, opts)
   end
+
+  def embedcurl(curl, title="", width="100%", classname="embedcurl")
+    return "<pre class=\"#{classname}\" width=\"#{width}\" title=\"#{title}\">#{curl}</pre>"
+  end
 end
 
 activate :deploy do |deploy|
