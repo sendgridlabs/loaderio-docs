@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Loader.io Documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link href='http://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+
+        <link href="../css/normalize-ec2a8901.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="../css/grid-7510d0e3.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="../css/main-31085277.css" media="screen" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+      <div class="row" id="content">
+        <div class="col navigation">
+          <a style="border: none" href="http://loader.io" title="Go to loader.io"><img alt="Loader.io Logo" src="../img/loaderio-logo-a674e321.png" /></a>
+          <h1>Loader.io Basics</h1>
+<ul>
+  <li><a href="../tests/creating.html">Creating a Test</a></li>
+  <li><a href="../tests/verifying.html">Verifying an App</a></li>
+  <li><a href="../tests/test-types.html">Test Types</a></li>
+  <li><a href="../tests/expression-syntax.html">Expression Syntax</a></li>
+  <li><a href="../tests/payload-files.html">Payload Files</a></li>
+  <li><a href="../tests/results.html">Results</a></li>
+</ul>
+
+<h1>Automation</h1>
+<ul>
+  <li><a href="../automate/webhook.html">Webhook</a></li>
+  <ul class="subnav">
+    <li><a href="../automate/travis-ci.html">TravisCI</a></li>
+    <li><a href="../automate/circle-ci.html">CircleCI</a></li>
+  </ul>
+</ul>
+
+<h1>Loader.io API</h1>
+<ul>
+  <li><a class="current" href="intro.html">Introduction</a></li>
+  <li><a href="apps.html">Application</a></li>
+    
+  <li><a href="tests.html">Tests</a></li>
+    
+  <li><a href="results.html">Results</a></li>
+    
+  <li><a href="servers.html">Servers</a></li>
+    
+</ul>
+
+        </div>
+        <div class="col docs">
+          <header>
+            <h1></h1>
+          </header>
+          <h1 id="the-loaderio-api">The Loader.io API</h1>
+
+<p>Loader.io provides a RESTful API at <a href="https://api.loader.io/v2/">api.loader.io</a>. Before you use the API, you will need to find your API Key. This is located in your <a href="https://loader.io/settings">account settings</a> page. You can reset your API key at any time to get a new one and expire your old one.</p>
+
+<p>Using the API, you can register and verify testing domains, create and run tests, view summary result data, and access a list of IP addresses that loader might send requests to your app from during a test. Integrate loader.io into your building and testing workflows using the API.</p>
+
+<h2 id="authentication">Authentication</h2>
+
+<p>To authenticate with the loader.io API, add the special <code>loaderio-auth</code> header to your request, and add your API key as the value for that header. Alternatively, you can add an <code>api_key</code> parameter to the request, in either the body or query string of the request.</p>
+
+<h2 id="about-this-documentation">About This Documentation</h2>
+
+<p>In this documentation, examples are displayed in the form of <a href="http://curl.haxx.se/">curl</a> commands, meant to be typed at a command prompt.</p>
+
+<p>A typical example API call might look something like this:</p>
+
+<pre class="embedcurl" width="100%" title="">curl -H 'loaderio-auth: API_KEY' https://api.loader.io/v2/tests</pre>
+<p>Let's break that down and explain each part:</p>
+
+<ul>
+  <li><code>curl</code>: <a href="http://curl.haxx.se" title="cURL">curl</a> is a command-line tool for accessing URLs over HTTP (and other protocols)</li>
+  <li><code>-H 'loaderio-auth: API_KEY'</code>: the <code>-H</code> option tells curl to add a header to the request. In this case, we add the <code>loaderio-auth</code> header and give it the value of our API key (replace "API_KEY" with the key obtained from your <a href="https://loader.io/settings" title="Loader.io account settings">account settings</a> page on loader.io)</li>
+  <li><code>https://api.loader.io/v2/tests</code>: this is the URL to the API resource we are accessing. In this case it's a list of all our tests (<em>note</em>: to keep your API key secure, always access the API over <code>https</code>, not <code>http</code>)</li>
+</ul>
+
+<p>Our API returns JSON that isn't formatted for viewing by humans, so you may also want to pretty-print the response. Many tools can do this for you, but an easy way that you might already have is python's <code>json.tool</code> module. Just pipe the curl response to <code>python -mjson.tool</code>:</p>
+
+<pre><code>curl ... | python -mjson.tool
+</code></pre>
+
+<p>This will format the response nicely if you're testing API calls from the command line. For even less typing, configure an alias in your shell, e.g. "alias json="python -mjson.tool".</p>
+
+<h3 id="id-placeholders">ID Placeholders</h3>
+
+<p>When you see a url with a section prefixed with a colon (":"), that section is a placeholder for a test ID or app ID. For example, in the URL </p>
+
+<pre><code>https://api.loader.io/v2/tests/:test_id`
+</code></pre>
+
+<p><code>:test_id</code> is a placeholder for a test id, e.g. <code>f133e9e3691e405eefd3e1b7c351cb18</code>. If you used <code>:test_id</code> there, you will get an error from the API.</p>
+
+
+        </div>
+      </div>
+      <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-33464055-6', 'loader.io');
+  ga('send', 'pageview');
+</script>
+
+      <script type="text/javascript">
+adroll_adv_id = "Z2P2HG6UXNCXBG36JI4Q6H";
+adroll_pix_id = "GZY4V4L2CVEVJNJLR5N6F7";
+(function () {
+var oldonload = window.onload;
+window.onload = function(){
+   __adroll_loaded=true;
+   var scr = document.createElement("script");
+   var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+   scr.setAttribute('async', 'true');
+   scr.type = "text/javascript";
+   scr.src = host + "/j/roundtrip.js";
+   ((document.getElementsByTagName('head') || [null])[0] ||
+    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+   if(oldonload){oldonload()}};
+}());
+</script>
+
+      <script src="https://embedcurl.com/embedcurl.js"></script>
+    </body>
+</html>
