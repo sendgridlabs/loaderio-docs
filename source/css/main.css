@@ -46,14 +46,13 @@ code {
   display: block;
   border-left: 2px #CCAEB0 solid;
 }
-.navigation a.current {
-  color: #1696E8;
-}
 .navigation a:hover,
+.navigation a.current,
 .docs a:hover {
   color: #1696E8;
 }
-.navigation a:hover {
+.navigation a:hover,
+.navigation a.current {
   border-left: 2px #e81626 solid;
 }
 
