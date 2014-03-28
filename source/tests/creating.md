@@ -65,6 +65,7 @@ At the most basic level, all you need to do with the URL field is enter the URL 
 - **GET Options**: You can add key/value pairs in these input boxes, and they will be URL-encoded and added to the query string of your URL.
 - **POST Options**: You can add either key/value pairs in the key/value boxes, just like with GET Options. These will be encoded and sent in the request body, the same as if a user filled out a form and submitted it. You can also provide the raw body text by selecting "BODY" and typing in the text area.
 - **Payload File**: You can use a specially-formatted JSON file to pass varying data on each request. Craft your [payload file][payload-file], put it at a public URL, and enter that URL in the box labeled "Enter the URL". When you run the test, loader.io will download the file, parse it, and use the data in the request body. See [payload files][payload-file] for more details on the format.
+- **Variables**: You can define variables that are associated with HTTP response header fields, and use these variables in other URLs and options. See [variables][variables] for more details on how to use variables when defining tests.
 
 ---------------------
 
@@ -79,6 +80,7 @@ There are two ways to clone a test: the big "clone" button on the results page, 
 [wp-basic-auth]: https://en.wikipedia.org/wiki/Basic_access_authentication "HTTP Basic Access Authentication"
 [wp-headers]: https://en.wikipedia.org/wiki/HTTP_headers "HTTP Headers"
 [payload-file]: payload-files.html "Payload File"
+[variables]: variables.html "Variables"
 [results]: results.html "Test Results"
 
 <div id="spacer"></div>

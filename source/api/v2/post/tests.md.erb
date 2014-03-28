@@ -9,7 +9,7 @@ Before creating a test in the API, we have to [create][app-create] and [verify][
 <%= embedcurl "curl -X POST https://api.loader.io/v2/tests \\
      -H 'loaderio-auth: API_KEY' \\
      --data-binary '{\"test_type\":\"cycling\",
-              \"total\": 6000, 
+              \"total\": 6000,
               \"duration\":60,
               \"urls\": [
                 {\"url\": \"http://gonnacrushya.com\"}
@@ -190,6 +190,13 @@ Each member of the `urls` array is an object with the following attributes:
       <td></td>
       <td><code>http://gonnacrushya.com/payload.json</code></td>
       <td>URL of a payload file</td>
+    </tr>
+    <tr>
+      <td><code>variables</code></td>
+      <td>JSON</td>
+      <td></td>
+      <td><code>[{"name": "token", "property": "X-Custom-Token", "source": "header"}, ...]</code></td>
+      <td>Define variables whose values will be set to header value</td>
     </tr>
   </tbody>
 </table>
