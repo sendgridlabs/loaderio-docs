@@ -31,31 +31,24 @@
 
 <h1>Integrations</h1>
 <ul>
-  <li><a href="../integrations/webhook.html">Webhook</a></li>
-  <li><a href="../integrations/travis-ci.html">TravisCI</a></li>
-  <li><a href="../integrations/circle-ci.html">CircleCI</a></li>
-  <li><a href="../integrations/jenkins.html">Jenkins</a></li>
-  <li><a href="../integrations/teamcity.html">TeamCity</a></li>
-  <li><a href="../integrations/github.html">GitHub</a></li>
+  <li><a href="webhook.html">Webhook</a></li>
+  <li><a href="travis-ci.html">TravisCI</a></li>
+  <li><a class="current" href="circle-ci.html">CircleCI</a></li>
+  <li><a href="jenkins.html">Jenkins</a></li>
+  <li><a href="teamcity.html">TeamCity</a></li>
+  <li><a href="github.html">GitHub</a></li>
 </ul>
 
 <h1>Loader.io API</h1>
 <ul>
-  <li><a href="intro.html">Introduction</a></li>
-  <li><a class="current" href="apps.html">Application</a></li>
-    <ul class="subnav">
-  <li><a href="v2/get/apps.html">GET /v2/apps</a></li>
-  <li><a href="v2/post/apps.html">POST /v2/apps</a></li>
-  <li><a href="v2/get/apps/app_id.html">GET /v2/apps/:app_id</a></li>
-  <li><a href="v2/post/apps/:app_id/verify.html">POST /v2/apps/:app_id/verify</a></li>
-  <li><a href="v2/delete/apps/app_id.html">DELETE /v2/apps/:app_id</a></li>
-</ul>
-
-  <li><a href="tests.html">Tests</a></li>
+  <li><a href="../api/intro.html">Introduction</a></li>
+  <li><a href="../api/apps.html">Application</a></li>
     
-  <li><a href="results.html">Results</a></li>
+  <li><a href="../api/tests.html">Tests</a></li>
     
-  <li><a href="servers.html">Servers</a></li>
+  <li><a href="../api/results.html">Results</a></li>
+    
+  <li><a href="../api/servers.html">Servers</a></li>
     
 </ul>
 
@@ -64,52 +57,17 @@
           <header>
             <h1></h1>
           </header>
-          <h1 id="applications">Applications</h1>
+          <h1 id="circleci-integration">CircleCI Integration</h1>
 
-<p>In loader.io, an application is more or less another word for "domain" or "subdomain". For example, if you want to run tests against both "gonnacrushya.com" and "www.gonnacrushya.com", you need to register and verify both domains as apps in loader.io.</p>
+<p>You can use the <a href="webhook.html">test webhook</a> to initiate a load test by adding a section like this to your <code>circle.yml</code> file:</p>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Method</th>
-      <th>URL</th>
-      <th>Action</th>
-      <th>Parameters</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>GET</td>
-      <td><code>/v2/apps</code></td>
-      <td>List registered applications</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>POST</td>
-      <td><code>/v2/apps</code></td>
-      <td>Register new application</td>
-      <td><code>app</code></td>
-    </tr>
-    <tr>
-      <td>GET</td>
-      <td><code>/v2/apps/{app_id}</code></td>
-      <td>Get specific app info</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>POST</td>
-      <td><code>/v2/apps/{app_id}/verify</code></td>
-      <td>Verify an app</td>
-      <td><code>method</code></td>
-    </tr>
-    <tr>
-      <td>DELETE</td>
-      <td><code>/v2/apps/{app_id}</code></td>
-      <td>Delete an app</td>
-      <td></td>
-    </tr>
-  </tbody>
-</table>
+<pre><code>notify:
+  webhooks:
+    # A list of hook hashes, containing the url field
+    - https://api.loader.io/v2/tests/{{test id}}/token/{{ test run token}}/run
+</code></pre>
+
+<p>Check out the <a href="https://circleci.com/docs/configuration#notify">CircleCI docs</a> for more details.</p>
 
         </div>
       </div>

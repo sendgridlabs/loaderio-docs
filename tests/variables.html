@@ -19,14 +19,14 @@
           <a style="border: none" href="http://loader.io" title="Go to loader.io"><img alt="Loader.io Logo" src="../img/loaderio-logo-a674e321.png" /></a>
           <h1>Loader.io Basics</h1>
 <ul>
-  <li><a href="../tests/creating.html">Creating a Test</a></li>
-  <li><a href="../tests/verifying.html">Verifying an App</a></li>
-  <li><a href="../tests/test-types.html">Test Types</a></li>
-  <li><a href="../tests/expression-syntax.html">Expression Syntax</a></li>
-  <li><a href="../tests/payload-files.html">Payload Files</a></li>
-  <li><a href="../tests/variables.html">Variables</a></li>
-  <li><a href="../tests/results.html">Results</a></li>
-  <li><a href="../tests/faq.html">FAQ</a></li>
+  <li><a href="creating.html">Creating a Test</a></li>
+  <li><a href="verifying.html">Verifying an App</a></li>
+  <li><a href="test-types.html">Test Types</a></li>
+  <li><a href="expression-syntax.html">Expression Syntax</a></li>
+  <li><a href="payload-files.html">Payload Files</a></li>
+  <li><a class="current" href="variables.html">Variables</a></li>
+  <li><a href="results.html">Results</a></li>
+  <li><a href="faq.html">FAQ</a></li>
 </ul>
 
 <h1>Integrations</h1>
@@ -41,21 +41,14 @@
 
 <h1>Loader.io API</h1>
 <ul>
-  <li><a href="intro.html">Introduction</a></li>
-  <li><a class="current" href="apps.html">Application</a></li>
-    <ul class="subnav">
-  <li><a href="v2/get/apps.html">GET /v2/apps</a></li>
-  <li><a href="v2/post/apps.html">POST /v2/apps</a></li>
-  <li><a href="v2/get/apps/app_id.html">GET /v2/apps/:app_id</a></li>
-  <li><a href="v2/post/apps/:app_id/verify.html">POST /v2/apps/:app_id/verify</a></li>
-  <li><a href="v2/delete/apps/app_id.html">DELETE /v2/apps/:app_id</a></li>
-</ul>
-
-  <li><a href="tests.html">Tests</a></li>
+  <li><a href="../api/intro.html">Introduction</a></li>
+  <li><a href="../api/apps.html">Application</a></li>
     
-  <li><a href="results.html">Results</a></li>
+  <li><a href="../api/tests.html">Tests</a></li>
     
-  <li><a href="servers.html">Servers</a></li>
+  <li><a href="../api/results.html">Results</a></li>
+    
+  <li><a href="../api/servers.html">Servers</a></li>
     
 </ul>
 
@@ -64,52 +57,32 @@
           <header>
             <h1></h1>
           </header>
-          <h1 id="applications">Applications</h1>
+          <h1 id="variables">Variables</h1>
 
-<p>In loader.io, an application is more or less another word for "domain" or "subdomain". For example, if you want to run tests against both "gonnacrushya.com" and "www.gonnacrushya.com", you need to register and verify both domains as apps in loader.io.</p>
+<p>Variables allow you to create test URLs that use data from a previous HTTP
+response header in your test. Specify variables by clicking on "Configure URL options"
+when creating a new test and then click the "Variables" link.</p>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Method</th>
-      <th>URL</th>
-      <th>Action</th>
-      <th>Parameters</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>GET</td>
-      <td><code>/v2/apps</code></td>
-      <td>List registered applications</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>POST</td>
-      <td><code>/v2/apps</code></td>
-      <td>Register new application</td>
-      <td><code>app</code></td>
-    </tr>
-    <tr>
-      <td>GET</td>
-      <td><code>/v2/apps/{app_id}</code></td>
-      <td>Get specific app info</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>POST</td>
-      <td><code>/v2/apps/{app_id}/verify</code></td>
-      <td>Verify an app</td>
-      <td><code>method</code></td>
-    </tr>
-    <tr>
-      <td>DELETE</td>
-      <td><code>/v2/apps/{app_id}</code></td>
-      <td>Delete an app</td>
-      <td></td>
-    </tr>
-  </tbody>
-</table>
+<p>Define a variable by specifying a name and an HTTP response header field name.</p>
+
+<p><img src="../img/loaderio-variables-ec1dc95b.png" alt="Specifying a variable" /></p>
+
+<p>A variable name must only contain alphanumeric ASCII characters and the underscore.
+Variable names are case sensitive.</p>
+
+<p>Once you have defined a variable, you can use that variable in any subsequent
+URL in that test using the <code>{{varname}}</code> syntax. For example, if you defined
+a variable named <em>id</em>, you could specify a test URL that used <em>id</em> in the path:</p>
+
+<pre><code>http://mysite.example.com/products/{{id}}/details
+</code></pre>
+
+<p>You can also use variables in GET Options and POST Options. For example, you
+could define a variable called <em>csrf</em> that was associated with a header field
+called <code>X-Csrf-Token</code>, and then pass it as a POST Option.</p>
+
+<p><img src="../img/loaderio-variables-example-ae9d5f45.png" alt="Define a csrf variable" /></p>
+
 
         </div>
       </div>

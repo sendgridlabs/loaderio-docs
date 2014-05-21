@@ -11,7 +11,7 @@
 
         <link href="../css/normalize-ec2a8901.css" media="screen" rel="stylesheet" type="text/css" />
         <link href="../css/grid-7510d0e3.css" media="screen" rel="stylesheet" type="text/css" />
-        <link href="../css/main-31085277.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="../css/main-d1e32c66.css" media="screen" rel="stylesheet" type="text/css" />
     </head>
     <body>
       <div class="row" id="content">
@@ -24,16 +24,19 @@
   <li><a href="../tests/test-types.html">Test Types</a></li>
   <li><a href="../tests/expression-syntax.html">Expression Syntax</a></li>
   <li><a href="../tests/payload-files.html">Payload Files</a></li>
+  <li><a href="../tests/variables.html">Variables</a></li>
   <li><a href="../tests/results.html">Results</a></li>
+  <li><a href="../tests/faq.html">FAQ</a></li>
 </ul>
 
-<h1>Automation</h1>
+<h1>Integrations</h1>
 <ul>
   <li><a class="current" href="webhook.html">Webhook</a></li>
-  <ul class="subnav">
-    <li><a href="travis-ci.html">TravisCI</a></li>
-    <li><a href="circle-ci.html">CircleCI</a></li>
-  </ul>
+  <li><a href="travis-ci.html">TravisCI</a></li>
+  <li><a href="circle-ci.html">CircleCI</a></li>
+  <li><a href="jenkins.html">Jenkins</a></li>
+  <li><a href="teamcity.html">TeamCity</a></li>
+  <li><a href="github.html">GitHub</a></li>
 </ul>
 
 <h1>Loader.io API</h1>
@@ -56,11 +59,13 @@
           </header>
           <h1 id="the-test-webhook">The test webhook</h1>
 
-<p>Each test has a unique token which will allow you to initiate that test through our API without handing out your full access token for your account. After you create and run a test, the test information tab shows the full API webhook that you can use to automate running that test again:</p>
+<p>Many tools and services allow you to configure a webhook that will receive notifications when you commit code, complete a test run, or deploy your application. You can use these settings to initiate a loader.io load test.</p>
+
+<p>Each test has a unique URL which will initiate that test through the loader.io API. A unique test-specific token is embeded right into the URL, so you can initiate tests without writing any code or handing out full access to your account.</p>
+
+<p>You can find your test's webhook on the "Test Information" tab:</p>
 
 <p><img src="../img/loaderio-webhook-1c163d13.png" alt="Test Information" /></p>
-
-<p>You can use this webhook in other services that support webhooks to initiate load tests after running your unit/integration tests, after commits in your source control repository, as part of your deploy process, or as part of your own custom tools. The webhook makes it easy to integrate loader.io in your development cycle any HTTP POST request to the webhook will initiate the test.</p>
 
 <h2 id="security-a-hrefsecurity-idsecurity-classmarka">Security <a href="#security" id="security" class="mark">#</a></h2>
 
@@ -69,13 +74,9 @@
         </div>
       </div>
       <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-33464055-6', 'loader.io');
-  ga('send', 'pageview');
+  window.analytics=window.analytics||[],window.analytics.methods=["identify","group","track","page","pageview","alias","ready","on","once","off","trackLink","trackForm","trackClick","trackSubmit"],window.analytics.factory=function(t){return function(){var a=Array.prototype.slice.call(arguments);return a.unshift(t),window.analytics.push(a),window.analytics}};for(var i=0;i<window.analytics.methods.length;i++){var key=window.analytics.methods[i];window.analytics[key]=window.analytics.factory(key)}window.analytics.load=function(t){if(!document.getElementById("analytics-js")){var a=document.createElement("script");a.type="text/javascript",a.id="analytics-js",a.async=!0,a.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.io/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n)}},window.analytics.SNIPPET_VERSION="2.0.9",
+  window.analytics.load("02kos4ymrn");
+  window.analytics.page()
 </script>
 
       <script type="text/javascript">

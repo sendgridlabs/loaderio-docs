@@ -19,14 +19,14 @@
           <a style="border: none" href="http://loader.io" title="Go to loader.io"><img alt="Loader.io Logo" src="../img/loaderio-logo-a674e321.png" /></a>
           <h1>Loader.io Basics</h1>
 <ul>
-  <li><a href="../tests/creating.html">Creating a Test</a></li>
-  <li><a href="../tests/verifying.html">Verifying an App</a></li>
-  <li><a href="../tests/test-types.html">Test Types</a></li>
-  <li><a href="../tests/expression-syntax.html">Expression Syntax</a></li>
-  <li><a href="../tests/payload-files.html">Payload Files</a></li>
-  <li><a href="../tests/variables.html">Variables</a></li>
-  <li><a href="../tests/results.html">Results</a></li>
-  <li><a href="../tests/faq.html">FAQ</a></li>
+  <li><a href="creating.html">Creating a Test</a></li>
+  <li><a href="verifying.html">Verifying an App</a></li>
+  <li><a href="test-types.html">Test Types</a></li>
+  <li><a href="expression-syntax.html">Expression Syntax</a></li>
+  <li><a href="payload-files.html">Payload Files</a></li>
+  <li><a href="variables.html">Variables</a></li>
+  <li><a href="results.html">Results</a></li>
+  <li><a class="current" href="faq.html">FAQ</a></li>
 </ul>
 
 <h1>Integrations</h1>
@@ -41,21 +41,14 @@
 
 <h1>Loader.io API</h1>
 <ul>
-  <li><a href="intro.html">Introduction</a></li>
-  <li><a class="current" href="apps.html">Application</a></li>
-    <ul class="subnav">
-  <li><a href="v2/get/apps.html">GET /v2/apps</a></li>
-  <li><a href="v2/post/apps.html">POST /v2/apps</a></li>
-  <li><a href="v2/get/apps/app_id.html">GET /v2/apps/:app_id</a></li>
-  <li><a href="v2/post/apps/:app_id/verify.html">POST /v2/apps/:app_id/verify</a></li>
-  <li><a href="v2/delete/apps/app_id.html">DELETE /v2/apps/:app_id</a></li>
-</ul>
-
-  <li><a href="tests.html">Tests</a></li>
+  <li><a href="../api/intro.html">Introduction</a></li>
+  <li><a href="../api/apps.html">Application</a></li>
     
-  <li><a href="results.html">Results</a></li>
+  <li><a href="../api/tests.html">Tests</a></li>
     
-  <li><a href="servers.html">Servers</a></li>
+  <li><a href="../api/results.html">Results</a></li>
+    
+  <li><a href="../api/servers.html">Servers</a></li>
     
 </ul>
 
@@ -64,52 +57,24 @@
           <header>
             <h1></h1>
           </header>
-          <h1 id="applications">Applications</h1>
+          <h1 id="frequently-asked-questions">Frequently Asked Questions</h1>
 
-<p>In loader.io, an application is more or less another word for "domain" or "subdomain". For example, if you want to run tests against both "gonnacrushya.com" and "www.gonnacrushya.com", you need to register and verify both domains as apps in loader.io.</p>
+<h3 id="do-you-support-cookies-a-hrefcookies-idcookies-classmarka">Do you support cookies? <a href="#cookies" id="cookies" class="mark">#</a></h3>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Method</th>
-      <th>URL</th>
-      <th>Action</th>
-      <th>Parameters</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>GET</td>
-      <td><code>/v2/apps</code></td>
-      <td>List registered applications</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>POST</td>
-      <td><code>/v2/apps</code></td>
-      <td>Register new application</td>
-      <td><code>app</code></td>
-    </tr>
-    <tr>
-      <td>GET</td>
-      <td><code>/v2/apps/{app_id}</code></td>
-      <td>Get specific app info</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>POST</td>
-      <td><code>/v2/apps/{app_id}/verify</code></td>
-      <td>Verify an app</td>
-      <td><code>method</code></td>
-    </tr>
-    <tr>
-      <td>DELETE</td>
-      <td><code>/v2/apps/{app_id}</code></td>
-      <td>Delete an app</td>
-      <td></td>
-    </tr>
-  </tbody>
-</table>
+<p>Yes. Send a <code>set-cookie</code> header, and we will send the cookie back on the next request.</p>
+
+<h3 id="what-causes-network-errors-a-hrefnetwork-errors-idnetwork-errors-classmarka">What causes network errors? <a href="#network-errors" id="network-errors" class="mark">#</a></h3>
+
+<p>Network errors can be caused by DNS resolution failures or TCP connection problems. If we are unable to either find or connect to your server for some reason, that is a network error.</p>
+
+<h3 id="do-you-load-linked-resourcesassets-a-hreflinked-resources-idlinked-resources-classmarka">Do you load linked resources/assets? <a href="#linked-resources" id="linked-resources" class="mark">#</a></h3>
+
+<p>No. Our load generators only know about the URLs you give us when you create a test. We don't parse the HTML and we don't download javascript, CSS, or images linked to within pages.</p>
+
+<h3 id="how-do-you-handle-redirects-a-hrefredirects-idredirects-classmarka">How do you handle redirects? <a href="#redirects" id="redirects" class="mark">#</a></h3>
+
+<p>We follow HTTP redirects as long as they are to a domain you have verified previously. Redirects out to other sites are not followed (but we still report the response time- the time it took to get the redirection).</p>
+
 
         </div>
       </div>
