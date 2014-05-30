@@ -1,9 +1,9 @@
-# TeamCity WebHooks
+# You're about to be redirected
+The support page that used to be here is now at:
+<br />
+<a href="http://support.loader.io/article/27-teamcity">http://support.loader.io/article/27-teamcity</a>
+<br />
+<br />
+If you're not automatically redirected in the next 5 seconds, click <a href="http://support.loader.io/article/27-teamcity">here</a>. 
 
-To run your tests after builds in TeamCity, first install the [tcWebHooks][1] TeamCity plugin. Once the plugin is installed, there will be a "WebHooks" tab in your project, and you can add your [test webhook][2] to receive notifications after successful builds:
-
-![TeamCity webhook configuration](../img/teamcity-webhook.png)
-
-
-  [1]: http://netwolfuk.wordpress.com/category/teamcity/tcplugins/tcwebhooks/ "tcWebHooks plugin"
-  [2]: webhook.html
+<div id="spacer"></div>
