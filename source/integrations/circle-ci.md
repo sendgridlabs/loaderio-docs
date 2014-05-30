@@ -1,10 +1,9 @@
-# CircleCI Integration
+# You're about to be redirected
+The support page that used to be here is now at:
+<br />
+<a href="http://support.loader.io/article/25-circleci">http://support.loader.io/article/25-circleci</a>
+<br />
+<br />
+If you're not automatically redirected in the next 5 seconds, click <a href="http://support.loader.io/article/25-circleci">here</a>. 
 
-You can use the [test webhook](webhook.html) to initiate a load test by adding a section like this to your `circle.yml` file:
-
-    notify:
-      webhooks:
-        # A list of hook hashes, containing the url field
-        - https://api.loader.io/v2/tests/{{test id}}/token/{{ test run token}}/run
-
-Check out the [CircleCI docs](https://circleci.com/docs/configuration#notify) for more details.
+<div id="spacer"></div>
