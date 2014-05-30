@@ -48,7 +48,7 @@ helpers do
 
   def meta_redirect_to_support
     if SUPPORT_REDIRECTS[request.path]
-      "<meta http-equiv='refresh' content='0; url=#{SUPPORT_REDIRECTS[request.path]}'>"
+      "<meta http-equiv='refresh' content='3; url=#{SUPPORT_REDIRECTS[request.path]}'>"
     end
   end
 
