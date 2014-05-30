@@ -58,62 +58,13 @@
           <header>
             <h1></h1>
           </header>
-          <h1 id="verifying-an-app">Verifying an App</h1>
-
-<p>Before starting a test, loader.io needs to verify that you are the owner of the domain you are testing. When your app is created, a token is generated for it, which will look something like this:</p>
-
-<pre><code>loaderio-28016b04fdb0ed4ea066ecec5a19c1ad
-</code></pre>
-
-<p>The numbers and letters after <code>loaderio-</code> are your app's token. You will need to use this token to verify your app. There are two ways to verify your app: by <a href="#http" title="Verify by HTTP">uploading a file</a> to your server, or <a href="#dns" title="Verify by DNS">adding a TXT record</a> to your DNS.</p>
-
-<p>Once your verification is in place and Loader checks it, your tests can run. If you ever remove the verification, tests will not be able to run.</p>
-
-<p>Tokens are unique for each user and each app, so even if another user tries to test your app, your verification file will not work for them- they will not be able to verify it, unless they have access to upload their own verification file or alter your DNS records.</p>
-
-<p><img src="../img/loaderio-http-verification-efceed49.png" alt="Verification Instructions" /></p>
-
-<hr />
-
-<h2 id="verify-by-http-a-hrefhttp-idhttp-classmarka">Verify by HTTP <a href="#http" id="http" class="mark">#</a></h2>
-
-<p>To verify your app via HTTP, place your app token in a file and upload it to a root directory on your server. To make this easy, a link is provided on the verification page for you to download a file with the correct name and contents.</p>
-
-<p>When you click "verify and start the test now", Loader will check for the verification file and run the test if the verification succeeds. Loader will check for the verification file each time you run a test on the same domain.</p>
-
-<ul>
-  <li>
-    <p>The file's name should be <code>loaderio-[your token]</code> with an optional <code>.txt</code> or <code>.html</code> extension</p>
-
-    <pre><code>loaderio-28016b04fdb0ed4ea066ecec5a19c1ad.txt
-</code></pre>
-  </li>
-  <li>
-    <p>The only text in the file should be <code>loaderio-</code> and the token itself</p>
-
-    <pre><code>$ cat loaderio-28016b04fdb0ed4ea066ecec5a19c1ad.txt
-loaderio-28016b04fdb0ed4ea066ecec5a19c1ad
-</code></pre>
-  </li>
-  <li>
-    <p>The file should be uploaded at the root of your server</p>
-
-    <pre><code>http://gonnacrushya.com/loaderio-28016b04fdb0ed4ea066ecec5a19c1ad.txt
-</code></pre>
-  </li>
-</ul>
-
-<hr />
-
-<h2 id="verify-by-dns-a-hrefdns-iddns-classmarka">Verify by DNS <a href="#dns" id="dns" class="mark">#</a></h2>
-
-<p>To verify your domain by DNS, you will need to add a <a href="http://en.wikipedia.org/wiki/List_of_DNS_record_types#TXT" title="DNS Record Types">TXT record</a> for your app's domain. How you do this depends on your hosting provider and how you are hosting your DNS, so if you aren't sure how to add a TXT record, check your hosting provider's documentation, or search the web.</p>
-
-<ul>
-  <li>Create a TXT record with the value <code>loaderio=[your token]</code></li>
-  <li>If the app you are testing is a subdomain (e.g. <code>appname.gonnacrushya.com</code>), the TXT record can be on either the subdomain or the root domain</li>
-  <li>It can take time for your DNS changes to <a href="http://en.wikipedia.org/wiki/Domain_Name_System#Record_caching" title="DNS Record Caching">propagate</a>, so <a href="http://upload.wikimedia.org/wikipedia/commons/1/17/Towelday-Innsbruck.jpg" title="Towel Day">don't panic</a> if DNS verification fails at first</li>
-</ul>
+          <h1 id="youre-about-to-be-redirected">You're about to be redirected</h1>
+<p>The support page that used to be here is now at:
+<br />
+<a href="http://support.loader.io/article/20-verifying-an-app">http://support.loader.io/article/20-verifying-an-app</a>
+<br />
+<br />
+If you're not automatically redirected in the next 5 seconds, click <a href="http://support.loader.io/article/20-verifying-an-app">here</a>. </p>
 
 <div id="spacer"></div>
 

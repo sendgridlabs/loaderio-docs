@@ -58,73 +58,15 @@
           <header>
             <h1></h1>
           </header>
-          <h1 id="test-results">Test Results</h1>
-
-<p>So you've created your test, verified it, run it, and watched the results come in real-time on a niftly little graph. What does it all mean? Let's break down the results page.</p>
-
-<h2 id="summary-data-a-hrefsummary-data-idsummary-data-classmarka">Summary data <a href="#summary-data" id="summary-data" class="mark">#</a></h2>
-
-<p>This section shows you a basic summary of the test:</p>
-
-<p><img style="float: right;margin-left:7px;" src="../img/loaderio-results-summary-02e0469f.png" alt="Results Summary" /></p>
-
-<ul>
-  <li><strong>Date &amp; Time</strong>: when the test ran</li>
-  <li><strong>Max clients</strong>: the maximum number of connections that were made</li>
-  <li><strong>Duration</strong>: the duration of the test</li>
-  <li><strong>Success Responses</strong>: total number of successful responses (<code>1xx</code>, <code>2xx</code>, or <code>3xx</code> response codes)</li>
-  <li><strong>Avg Time</strong>: Average time loader waited for a response from your app</li>
-  <li><strong>Rcvd by clients</strong>: Total amount of data we received from your app (response size)</li>
-  <li><strong>Sent from clients</strong>: Total amount of data we sent to your app (request size)</li>
-  <li><strong>Timeout errors</strong>: Requests that did not receive a response within the configured <a href="creating.html#timeout-and-error">timeout</a></li>
-  <li><strong>Network Errors</strong>: DNS resolution, TCP connection timeouts, resets, and other transport-layer problems</li>
-  <li><strong>Errors (400/500)</strong>: Responses returned with an error code (<code>4xx</code> and <code>5xx</code> response codes)</li>
-  <li><strong>Avg error rate</strong>: Percentage of errors out of the total attempted requests</li>
-</ul>
-
-<h2 id="graphs-a-hrefgraphs-idgraphs-classmarka">Graphs <a href="#graphs" id="graphs" class="mark">#</a></h2>
-
-<p>There are three graphs that give more detailed information about what is going on during the test: <em>response times</em>, <em>error rates</em>, and <em>bandwidth</em>. On each graph, you can show or hide different parts of the chart by clicking on the label in the key below the graph.</p>
-
-<h3 id="times-a-hrefgraphs-response-times-idgraphs-response-times-classmarka">Times <a href="#graphs-response-times" id="graphs-response-times" class="mark">#</a></h3>
-
-<p><img style="float: right;margin-left:7px;" src="../img/loaderio-graph-response-times-f8f3a5b8.png" alt="Response times graph" /></p>
-
-<p>The response times graph displays two lines:</p>
-
-<ul>
-  <li><strong>in green</strong>: the number of connections that were made to your app</li>
-  <li><strong>in blue</strong>: the average response time for the connections made</li>
-</ul>
-
-<p>If you look closely, you will also notice that this graph has two vertical axes as well: response time on the left, connections on the right. Don't mix them up!</p>
-
-<h3 id="details-a-hrefgraphs-error-rates-idgraphs-error-rates-classmarka">Details <a href="#graphs-error-rates" id="graphs-error-rates" class="mark">#</a></h3>
-
-<p>The error rates graph is a slight misnomer; it actually displays success rates as well as errors. The idea here though is to give you an idea about when your app begins to throw errors, when requests start timing out, and so on. If you see only green on this graph, your app is doing well. When it turns yellow, orange, or red then you have some performance tuning (or debugging!) to do :)</p>
-
-<h3 id="bandwidth-a-hrefgraphs-bandwidth-idgraphs-bandwidth-classmarka">Bandwidth <a href="#graphs-bandwidth" id="graphs-bandwidth" class="mark">#</a></h3>
-
-<p>This graph just shows how much data was sent from your app, and how much your app received from loader.io. Pretty straightforward!</p>
-
-<h3 id="distribution-a-hrefgraphs-distribution-idgraphs-distribution-classmarka">Distribution <a href="#graphs-distribution" id="graphs-distribution" class="mark">#</a></h3>
-
-<p><img style="float: right;margin-left:7px;" src="../img/response_time_hist-0234b98c.png" alt="Response times histogram" /></p>
-
-<p>For <a href="http://loader.io/pricing">pro users</a> we display a histogram of response times. We group similar response times together into buckets and display them as bars on the histogram. This type of graph shows more information about how your servers are performing than the averages on the other graphs. Here you can see where the majority of your responses lie in relation to the minimum, average, and maximum response times.</p>
-
-<p>For example in the histogram pictured here, the minimum response time was 131ms and the max was 940ms. The histogram shows that very few responses took longer than 600ms.</p>
-
-<div style="clear:both"></div>
-
-<h2 id="all-results-a-hrefall-results-idall-results-classmarka">All Results <a href="#all-results" id="all-results" class="mark">#</a></h2>
-
-<p><img style="float: right;margin-left:7px;" src="../img/loaderio-all-results-82e97b10.png" alt="All Results" /></p>
-
-<p>When you run a test several times (use the "re-run" button!), you see the most recent results by default. You can access results from previous runs by clicking the "All Results" tab above the graphs. The All Results tab displays a table of vital statistics from each run, and a link to view the details. The result you are currently looking at is highlighted in blue.</p>
+          <h1 id="youre-about-to-be-redirected">You're about to be redirected</h1>
+<p>The support page that used to be here is now at:
+<br />
+<a href="http://support.loader.io/article/19-test-results">http://support.loader.io/article/19-test-results</a>
+<br />
+<br />
+If you're not automatically redirected in the next 5 seconds, click <a href="http://support.loader.io/article/19-test-results">here</a>. </p>
 
 <div id="spacer"></div>
-
 
         </div>
       </div>

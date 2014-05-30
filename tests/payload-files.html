@@ -58,33 +58,15 @@
           <header>
             <h1></h1>
           </header>
-          <h1 id="payload-files">Payload Files</h1>
+          <h1 id="youre-about-to-be-redirected">You're about to be redirected</h1>
+<p>The support page that used to be here is now at:
+<br />
+<a href="http://support.loader.io/article/17-payload-files">http://support.loader.io/article/17-payload-files</a>
+<br />
+<br />
+If you're not automatically redirected in the next 5 seconds, click <a href="http://support.loader.io/article/17-payload-files">here</a>. </p>
 
-<p>Payload files are another way to get loader to send varying data to your app. The file should contain JSON data like this:</p>
-
-<pre><code>{
-  "keys": ["username", "password"] ,
-  "values": [
-    ["steve", "h4x0R"],
-    ["joe1", "silly"],
-    ["jack", "&lt;3jill"],
-    ["jill", "&lt;3jack"]
-  ]
-}
-</code></pre>
-
-<p>On each request, loader.io will send a different set of data from your payload file:</p>
-
-<pre><code>request 1: username=steve, password=h4x0R
-request 2: username=joe1, password=silly
-request 3: username=jack, password=&lt;3jill
-request 4: username=jill, password=&lt;3jack
-</code></pre>
-
-<p>Place your payload data in a file at any publicly-accessible URL (S3, Dropbox, or your own server is fine—just somewhere we can get at it), and enter the URL in the payload file URL field:</p>
-
-<p><img src="../img/loaderio-payload-file-url-field-cfad4067.png" alt="Payload File URL Field" /></p>
-
+<div id="spacer"></div>
 
         </div>
       </div>
