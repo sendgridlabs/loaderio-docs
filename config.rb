@@ -30,6 +30,7 @@ SUPPORT_REDIRECTS = {
   'integrations/jenkins.html'    => 'http://support.loader.io/article/26-jenkins',
   'integrations/teamcity.html'   => 'http://support.loader.io/article/27-teamcity',
   'integrations/github.html'     => 'http://support.loader.io/article/28-github-service-hooks',
+  'integrations/new-relic.html'  => 'http://support.loader.io/article/79-new-relic-integration',
 }
 
 helpers do
