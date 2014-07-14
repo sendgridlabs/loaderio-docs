@@ -23,6 +23,7 @@ SUPPORT_REDIRECTS = {
   'tests/variables.html'         => 'http://support.loader.io/article/18-variables',
   'tests/results.html'           => 'http://support.loader.io/article/19-test-results',
   'tests/faq.html'               => 'http://support.loader.io/category/29-frequently-asked-questions',
+  'tests/support.html'           => 'http://support.loader.io',
 
   'integrations/webhook.html'    => 'http://support.loader.io/article/23-webhook',
   'integrations/travis-ci.html'  => 'http://support.loader.io/article/24-travisci',
