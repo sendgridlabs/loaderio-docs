@@ -46,9 +46,13 @@ helpers do
     link_to(text, url, opts)
   end
 
+  def support_redirect
+    SUPPORT_REDIRECTS[request.path]
+  end
+
   def meta_redirect_to_support
-    if SUPPORT_REDIRECTS[request.path]
-      "<meta http-equiv='refresh' content='3; url=#{SUPPORT_REDIRECTS[request.path]}'>"
+    if support_redirect
+      "<meta http-equiv='refresh' content='3; url=#{ support_redirect }'>"
     end
   end
 
