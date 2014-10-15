@@ -15,23 +15,23 @@ end
 
 # some of the pages live in helpscout now
 SUPPORT_REDIRECTS = {
-  'tests/creating.html'          => 'http://support.loader.io/article/15-creating-a-test',
-  'tests/verifying.html'         => 'http://support.loader.io/article/20-verifying-an-app',
-  'tests/test-types.html'        => 'http://support.loader.io/article/16-test-types',
-  'tests/expression-syntax.html' => 'http://support.loader.io/article/21-expression-syntax',
-  'tests/payload-files.html'     => 'http://support.loader.io/article/17-payload-files',
-  'tests/variables.html'         => 'http://support.loader.io/article/18-variables',
-  'tests/results.html'           => 'http://support.loader.io/article/19-test-results',
-  'tests/faq.html'               => 'http://support.loader.io/category/29-frequently-asked-questions',
-  'tests/support.html'           => 'http://support.loader.io',
+  'tests/creating.html'          => 'http://support.sds.sendgrid.com/article/106-creating-a-test',
+  'tests/verifying.html'         => 'http://support.sds.sendgrid.com/article/108-verifying-an-app',
+  'tests/test-types.html'        => 'http://support.sds.sendgrid.com/article/109-test-types',
+  'tests/expression-syntax.html' => 'http://support.sds.sendgrid.com/article/110-expression-syntax',
+  'tests/payload-files.html'     => 'http://support.sds.sendgrid.com/article/111-payload-files',
+  'tests/variables.html'         => 'http://support.sds.sendgrid.com/article/112-variables',
+  'tests/results.html'           => 'http://support.sds.sendgrid.com/article/113-test-results',
+  'tests/faq.html'               => 'http://support.sds.sendgrid.com/category/104-general-faqs',
+  'tests/support.html'           => 'http://support.sds.sendgrid.com',
 
-  'integrations/webhook.html'    => 'http://support.loader.io/article/23-webhook',
-  'integrations/travis-ci.html'  => 'http://support.loader.io/article/24-travisci',
-  'integrations/circle-ci.html'  => 'http://support.loader.io/article/25-circleci',
-  'integrations/jenkins.html'    => 'http://support.loader.io/article/26-jenkins',
-  'integrations/teamcity.html'   => 'http://support.loader.io/article/27-teamcity',
-  'integrations/github.html'     => 'http://support.loader.io/article/28-github-service-hooks',
-  'integrations/new-relic.html'  => 'http://support.loader.io/article/79-new-relic-integration',
+  'integrations/webhook.html'    => 'http://support.sds.sendgrid.com/article/125-webhooks',
+  'integrations/travis-ci.html'  => 'http://support.sds.sendgrid.com/article/126-travisci',
+  'integrations/circle-ci.html'  => 'http://support.sds.sendgrid.com/article/127-circleci',
+  'integrations/jenkins.html'    => 'http://support.sds.sendgrid.com/article/128-jenkins',
+  'integrations/teamcity.html'   => 'http://support.sds.sendgrid.com/article/129-teamcity',
+  'integrations/github.html'     => 'http://support.sds.sendgrid.com/article/130-github-service-hooks',
+  'integrations/new-relic.html'  => 'http://support.sds.sendgrid.com/article/172-new-relic-integration',
 }
 
 helpers do
