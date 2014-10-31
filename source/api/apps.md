@@ -1,6 +1,6 @@
-# Applications
+# Target Hosts / Applications
 
-In loader.io, an application is more or less another word for "domain" or "subdomain". For example, if you want to run tests against both "gonnacrushya.com" and "www.gonnacrushya.com", you need to register and verify both domains as apps in loader.io.
+In loader.io, an target host, or application, is the domain, subdomain, or IP address you will be testing. For example, if you want to run tests against both "gonnacrushya.com" and "www.gonnacrushya.com", you need to register and verify both domains as apps in loader.io.
 
 
 <table class="table">
