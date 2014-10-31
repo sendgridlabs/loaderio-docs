@@ -71,7 +71,7 @@
 
 <p>Create your <a href="/tests/verifying.html#http">verification file</a> or <a href="/tests/verifying.html#dns">DNS TXT record</a>—use the <code>app_id</code> as your verification token—then tell loader.io to verify your app:</p>
 
-<pre class="embedcurl" width="100%" title="">curl -X POST https://api.loader.io/v2/apps \
+<pre class="embedcurl" width="100%" title="">curl -X POST https://api.loader.io/v2/apps/:id/verify \
      -H 'loaderio-auth: API_KEY' \
      -d method=http</pre>
 
