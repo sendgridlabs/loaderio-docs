@@ -3,11 +3,11 @@ body {
   font-size: 1em;
   font-family: Raleway, Helvetica, sans-serif;
   line-height: 1.4;
-  border-top: 5px #e81626 solid;
+  border-top: 5px #477bbe solid;
 }
 
 body pre {
-  border-left: 2px #e81626 solid;
+  border-left: 2px #1670E8 solid;
   border-radius: 3px;
   background-color: #f8f8f8;
   font-size: 13px;
@@ -38,13 +38,13 @@ code {
 }
 .navigation a, .docs a,
 .navigation a:visited, .docs a:visited {
-  color: #e81626;
+  color: #477bbe;
   text-decoration: none;
 }
 .navigation a {
   padding: 5px 0px 5px 15px;
   display: block;
-  border-left: 2px #CCAEB0 solid;
+  border-left: 2px #AAC2E1 solid;
 }
 .navigation a:hover,
 .navigation a.current,
@@ -53,7 +53,7 @@ code {
 }
 .navigation a:hover,
 .navigation a.current {
-  border-left: 2px #e81626 solid;
+  border-left: 2px #1670E8 solid;
 }
 
 ul .subnav {
