@@ -1877,7 +1877,7 @@ pre {
 
 pre code,
 p code {
-  font: 300 13px "Monaco";
+  font: 300 13px Monaco, monospace;
   color: #546b81;
 }
 
